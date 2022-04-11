@@ -4,7 +4,7 @@
   "description": "Challenge by Coodesh",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js"
   },
   "repository": {
