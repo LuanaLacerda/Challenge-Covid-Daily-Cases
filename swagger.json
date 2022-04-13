@@ -5,7 +5,7 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "challenge-covid.herokuapp.com/",
+  "host": "challenge-covid.herokuapp.com",
   "basePath": "/",
   "schemes": [
     "https"
