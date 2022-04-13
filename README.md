@@ -11,7 +11,7 @@ Desafio onde foi desenvolvido uma REST API utilizando o hitórico de casos de Co
 
 - NodeJs
 - Javascript
-- PostegreSQL
+- PostgreSQL
 - ExpressJs
 
 ## Instalção
