@@ -13,6 +13,7 @@ Desafio onde foi desenvolvido uma REST API utilizando o hitórico de casos de Co
 - Javascript
 - PostgreSQL
 - ExpressJs
+- Swagger
 
 ## Instalção
 
@@ -26,6 +27,12 @@ Desafio onde foi desenvolvido uma REST API utilizando o hitórico de casos de Co
 Projeto está hospedado pelo Heroku para utilizar a API utilizar o link abaixo:
 
 https://challenge-covid.herokuapp.com/
+
+## Documentação
+
+Acesse a documentação através do [link](https://challenge-covid.herokuapp.com/docs/#/).
+
+https://challenge-covid.herokuapp.com/docs/#/
 
 ## Rotas
 
