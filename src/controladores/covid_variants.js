@@ -7,6 +7,13 @@ const getTest = async (req, res) => {
 const listarDadosDia = async (req, res) => {
     const { date } = req.params
 
+    const datas = await knex('covid_variants').distinct('date').where({ date }).first()
+
+
+    if (!datas) {
+        return res.status(404).json('Data não encontrada, favor verificar datas diponíveis!')
+    }
+
     try {
         const listarDadosDia = await knex('covid_variants')
             .select('location', 'variant')
@@ -22,6 +29,12 @@ const listarDadosDia = async (req, res) => {
 
 const listarSomaCasos = async (req, res) => {
     const { date } = req.params
+
+    const dataExiste = await knex('covid_variants').where({ date }).first()
+
+    if (!dataExiste) {
+        return res.status(404).json('Data não encontrada, favor verificar datas diponíveis!')
+    }
 
     try {
         const listarDadosDia = await knex('covid_variants')
