@@ -5,7 +5,7 @@
 
 ## Introdução
 
-Desafio onde foi desenvolvido uma REST API utilizando o hitórico de casos de Covid, disponível no [Kaggle](https://www.kaggle.com/datasets/yamqwe/omicron-covid19-variant-daily-cases).
+Desafio em que uma REST API foi desenvolvida a partir do histórico de casos de Covid disponível no Kaggle. [Kaggle](https://www.kaggle.com/datasets/yamqwe/omicron-covid19-variant-daily-cases).
 
 ## Linguagem, framework e/ou tecnologias usadas
 
@@ -15,7 +15,7 @@ Desafio onde foi desenvolvido uma REST API utilizando o hitórico de casos de Co
 - ExpressJs
 - Swagger
 
-## Instalção
+## Instalação
 
 É necessário possuir o ambiente Node.js instalado para executar este projeto. 
 
@@ -24,7 +24,7 @@ Desafio onde foi desenvolvido uma REST API utilizando o hitórico de casos de Co
 
 ## Deploy
 
-Projeto está hospedado pelo Heroku para utilizar a API utilizar o link abaixo:
+O servidor da aplicação está hospedado no Heroku. Para utilizar a API, recorra ao link abaixo:
 
 https://challenge-covid.herokuapp.com/
 
