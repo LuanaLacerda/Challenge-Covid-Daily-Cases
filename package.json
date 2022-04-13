@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/LuanaLacerda/Challenge-Covid-Daily-Cases#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
+    "knex": "^1.0.5",
     "pg": "^8.7.3"
   },
   "devDependencies": {

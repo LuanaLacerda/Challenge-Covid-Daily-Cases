@@ -1,51 +1,66 @@
-const conexao = require('../conexao');
+const knex = require('../conexao')
 
-async function getTest(req, res) {
+// Retornar um Status: 200 e uma Mensagem "Backend Challenge 2021 🏅 - Covid Daily Cases"
+const getTest = async (req, res) => {
     res.status(200).json('Backend Challenge 2021 🏅 - Covid Daily Cases')
 };
 
-// async function listarDadosDia(req, res) {
-//     const date = req.params.date
-
-//     try {
-//         const query = 'select * from covid_variants where date = $1'
-//         const {rows, rowCount} = await conexao.query(query,[date])
-
-//         if(rowCount <=0){
-//             return res.status(404).json({messagem: "Não foi encontrado para a data fornecida"})
-//         }
-
-//     } catch (error) {
-//         return res.status(500).json({ mensagem: "Ocorreu um erro inesperado. - " + error.message })
-
-//     }
-
-
-// };
-
-async function listarSomaCasos(req, res) {
-
-}
-
-async function listarDatasDisponiveis(req, res) {
+// [GET]/cases/:date/count: Listar todos os registros da base de dados no dia selecionado, agrupados por país e separados por variante.
+const listarDadosDia = async (req, res) => {
+    const { date } = req.params
 
     try {
-        const query = 'select distinct date from covid_variants'
-        const { rows } = await conexao.query(query)
+        const listarDadosDia = await knex('covid_variants')
+            .select('location', 'variant')
+            .where({ date })
+            .groupBy('location', 'variant')
 
-        return res.json(200).json(rows)
+            .debug()
+
+        return res.status(200).json(listarDadosDia)
+
+
     } catch (error) {
         return res.status(500).json({ mensagem: "Ocorreu um erro inesperado. - " + error.message })
 
     }
 
 
+};
+
+//Listar todos os registros da base de dados, retornando a soma dos casos registrados de acordo com a data selecionada, agrupados por país e separados por variante.
+const listarSomaCasos = async (req, res) => {
+    const { date } = req.params
+
+    try {
+        const listarDadosDia = await knex('covid_variants')
+            .select('location', 'variant')
+            .where({ date })
+            .groupBy('location', 'variant')
+            .sum('num_sequences_total')
+            .debug()
+
+        return res.status(200).json(listarDadosDia)
+
+
+    } catch (error) {
+        return res.status(500).json({ mensagem: "Ocorreu um erro inesperado. - " + error.message })
+
+    }
+
+}
+
+//Listar as datas disponíveis no dataset
+const listarDatasDisponiveis = async (req, res) => {
+    const datas = await knex('covid_variants').distinct('date').debug();
+    return res.status(200).json(datas);
+
 }
 
 
 module.exports = {
     getTest,
-    //listarDadosDia,
+    listarDadosDia,
     listarSomaCasos,
     listarDatasDisponiveis
 
