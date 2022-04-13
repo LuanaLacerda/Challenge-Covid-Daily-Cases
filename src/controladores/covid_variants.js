@@ -51,7 +51,7 @@ const listarSomaCasos = async (req, res) => {
 }
 
 const listarDatasDisponiveis = async (req, res) => {
-    const datas = await knex('covid_variants').distinct('date').debug();
+    const datas = await knex('covid_variants').distinct('date');
     return res.status(200).json(datas);
 }
 

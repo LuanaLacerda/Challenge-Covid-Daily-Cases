@@ -28,6 +28,8 @@ Projeto está hospedado pelo Heroku para utilizar a API utilizar o link abaixo:
 
 https://challenge-covid.herokuapp.com/
 
+Obs: Como os dados excederam o limite do Heroku a api ficará disponível somente por alguns dias.
+
 ## Documentação
 
 Acesse a documentação através do [link](https://challenge-covid.herokuapp.com/docs/#/).
